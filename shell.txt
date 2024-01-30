@@ -1,0 +1,19 @@
+from contact.models import contact
+
+c = Contact(first_name='nome')
+
+c.save()
+
+c = Contact.objects.get(id=2)
+
+c =Ontact.objects.all()
+queryset
+
+c = Contact.objects.filter(id=10)
+
+c = Contact.objects.all().filter(id=10)
+
+c = Contact.objects.order_by('-id')
+
+c = Contact.objects.create(first_name='nome')
+
