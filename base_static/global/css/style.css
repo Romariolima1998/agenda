@@ -291,6 +291,11 @@
   .form-group label {
     font-size: var(--smaller-font-size);
   }
+
+  .contact-links{
+    display: flex;
+    ;
+  }
   
   .btn {
     background-color: var(--link-dark-color);
@@ -301,6 +306,7 @@
     border-radius: var(--default-border-radius);
     cursor: pointer;
     transition: filter var(--transition-fast) ease-in-out;
+    margin: 10px;
   }
   
   .btn:hover {
@@ -311,4 +317,8 @@
   .btn:active {
     filter: brightness(80%);
     box-shadow: 0 0 5px var(--link-dark-color);
+  }
+
+  .btn-delete{
+    background-color: tomato;
   }
