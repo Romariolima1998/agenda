@@ -28,12 +28,14 @@ class Contact(models.Model):
     category = models.ForeignKey(
         Category,
         on_delete=models.SET_NULL,
-        null=True
+        null=True,
+        blank=True
           )
     owner = models.ForeignKey(
         User,
         on_delete=models.SET_NULL,
-        null=True
+        null=True,
+        blank=True
           )
 
     def __str__(self) -> str:
