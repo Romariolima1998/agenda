@@ -40,7 +40,7 @@ class ContactForm(forms.ModelForm):
   
         return super().clean()
 
- 
+
 class RegiterForm(UserCreationForm):
     first_name = forms.CharField(
         required=True
