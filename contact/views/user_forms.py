@@ -4,7 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import auth
 
 
-from contact.forms import RegiterForm
+from contact.forms import RegiterForm, RegisterUpdateForm
 
 
 def register(request):
@@ -25,6 +25,28 @@ def register(request):
           'form': form,
         }
     )
+
+
+def user_update(request):
+
+    if request.user.is_authenticated:
+        form = RegisterUpdateForm(instance=request.user)
+
+        if request.method == 'POST':
+            form = RegisterUpdateForm(data=request.POST, instance=request.user)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'usuario atualizado com sucesso')
+                return redirect('contact:user_update')
+
+        return render(
+            request,
+            'contact/user_update.html',
+            {
+                'form': form,
+            }
+        )
+    return redirect('contact:login')
 
 
 def login_view(request):
