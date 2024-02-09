@@ -7,7 +7,7 @@ from django.core.paginator import Paginator
 
 
 def index(request):
-    contacts = Contact.objects.filter(show=True).order_by("-id")
+    contacts = Contact.objects.filter(show=True).order_by("first_name")
     paginator = Paginator(contacts, 10)
 
     page_number = request.GET.get("page")
