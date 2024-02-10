@@ -37,6 +37,7 @@ def search(request):
             Q(first_name__icontains=search_values) |
             Q(last_name__icontains=search_values) |
             Q(phone__icontains=search_values) |
+            Q(id__icontains=search_values) |
             Q(email__icontains=search_values)
             )\
         .order_by("first_name")
@@ -65,7 +66,8 @@ def contact(request, contact_id):
         show=True
     )
 
-    contact_title = f'{single_contact.first_name} {single_contact.last_name} - '
+    contact_title = f'{single_contact.first_name} \
+        {single_contact.last_name} - '
     context = {
         'contact': single_contact,
         'site_title': contact_title

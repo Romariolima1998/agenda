@@ -46,6 +46,7 @@ def create(request):
         context,
     )
 
+
 @login_required(login_url='contact:login')
 def update(request, contact_id):
     contact = get_object_or_404(
@@ -111,4 +112,3 @@ def delete(request, contact_id):
             'confirmation': confirmation
         }
     )
-    
